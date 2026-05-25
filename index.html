@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Presentes - Mel & Messias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body id="topo">
+  <header class="hero">
+    <div class="hero__inner">
+      <img class="hero__logo" src="assets/img/logo-mm-escura.png" alt="Monograma Mel e Messias" />
+      <p class="eyebrow">Lista de presentes</p>
+      <h1>Mel <span>&</span> Messias</h1>
+      <p class="hero__text">Escolha uma sugestão, veja o preço pelo link e reserve o presente na própria página.</p>
+      <div class="hero__pill">Enxoval nas cores: preto, branco, inox e bambu</div>
+    </div>
+  </header>
+
+  <section class="palette" aria-label="Cores do enxoval">
+    <div class="palette__inner">
+      <strong>Cores do enxoval</strong>
+      <span><i class="dot dot--black"></i>Preto</span>
+      <span><i class="dot dot--white"></i>Branco</span>
+      <span><i class="dot dot--inox"></i>Inox</span>
+      <span><i class="dot dot--bambu"></i>Bambu</span>
+      <em>Evite cores muito vivas ou estampadas.</em>
+    </div>
+  </section>
+
+  <section class="pix" aria-label="Pix">
+    <div class="pix__text">
+      <strong>Prefere presentear em dinheiro?</strong>
+      <span>Sua contribuição vai direto para o nosso lar.</span>
+    </div>
+    <div class="pix__box">
+      <div>
+        <strong id="pixKey">31971755128</strong>
+        <span>Mellyssa Meireles dos Santos</span>
+      </div>
+      <button type="button" id="copyPixBtn">Copiar Pix</button>
+    </div>
+  </section>
+
+  <main class="main">
+    <section class="notice">
+      <h2>Avisos antes de escolher</h2>
+      <p>Os presentes abaixo são apenas sugestões para facilitar a escolha. Você também pode presentear com outro item que combine com o nosso enxoval.</p>
+      <p>As cores escolhidas para o nosso lar são <strong>preto, branco, inox e bambu</strong>. Pedimos apenas que evite itens com cores muito vivas ou estampadas, para manter tudo harmonioso.</p>
+    </section>
+
+    <section class="controls" aria-label="Filtros da lista">
+      <label class="searchBox" for="searchInput">
+        <span>Pesquisar presente</span>
+        <input id="searchInput" type="search" placeholder="Ex: geladeira, cooktop, panela..." autocomplete="off" />
+      </label>
+
+      <label class="selectBox" for="sortSelect">
+        <span>Ordenar por</span>
+        <select id="sortSelect">
+          <option value="alpha">Ordem alfabética</option>
+          <option value="price-asc">Menor preço para maior</option>
+          <option value="price-desc">Maior preço para menor</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="listHeader">
+      <div>
+        <h2>Presentes sugeridos</h2>
+        <p id="counter">Carregando lista...</p>
+      </div>
+      <button type="button" id="reloadBtn">Atualizar lista</button>
+    </section>
+
+    <section id="loadingState" class="stateBox">Carregando presentes...</section>
+    <section id="errorState" class="stateBox stateBox--error" hidden></section>
+    <section id="emptyState" class="stateBox" hidden>Nenhum presente encontrado.</section>
+
+    <section id="productsGrid" class="productsGrid" aria-live="polite"></section>
+  </main>
+
+  <button type="button" class="backTop" id="backTopBtn" aria-label="Voltar para o topo">Topo</button>
+
+  <div class="modalBackdrop" id="reserveModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button type="button" class="modal__close" id="closeModalBtn" aria-label="Fechar">×</button>
+      <p class="eyebrow eyebrow--dark">Reserva de presente</p>
+      <h2 id="modalTitle">Reservar presente</h2>
+      <p id="modalProduct" class="modal__product"></p>
+
+      <label>
+        Seu nome
+        <input id="guestName" type="text" placeholder="Digite seu nome" autocomplete="name" />
+      </label>
+
+      <label>
+        Seu WhatsApp
+        <input id="guestWhatsapp" type="tel" placeholder="Ex: 31999999999" autocomplete="tel" />
+      </label>
+
+      <p class="modal__error" id="modalError" hidden></p>
+
+      <div class="modal__actions">
+        <button type="button" class="btn btn--ghost" id="cancelReserveBtn">Cancelar</button>
+        <button type="button" class="btn btn--primary" id="confirmReserveBtn">Confirmar reserva</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+LISTA DE PRESENTES - MEL & MESSIAS
+VERSÃO PARA GITHUB PAGES + GOOGLE PLANILHAS
+
+ESTRUTURA:
+- index.html
+- assets/css/styles.css
+- assets/js/app.js
+- assets/img/logo-mm-escura.png
+- Code.gs
+
+COMO CONFIGURAR:
+
+1) GOOGLE PLANILHAS
+Na aba Produtos, use exatamente estas colunas:
+
+Produto | Link sugerido | Faixa de preço | Status | Reservado por | WhatsApp | Data da reserva
+
+Exemplo:
+Geladeira | https://linkdoproduto.com | 300+ | Disponível | | |
+Cooktop | https://linkdoproduto.com | 200 a 300 | Disponível | | |
+
+Não coloque ID/número antes do produto.
+A coluna Produto precisa ser a coluna A.
+A coluna Link sugerido precisa ser a coluna B.
+A coluna Faixa de preço precisa ser a coluna C.
+A coluna Status precisa ser a coluna D.
+
+2) APPS SCRIPT
+Abra a planilha no Google Planilhas.
+Vá em Extensões > Apps Script.
+Apague o código atual e cole o conteúdo do arquivo Code.gs.
+Salve.
+Vá em Implantar > Nova implantação.
+Tipo: App da Web.
+Executar como: Eu.
+Quem pode acessar: Qualquer pessoa.
+Clique em Implantar e copie o link terminado em /exec.
+
+3) TESTE A API
+Abra no navegador:
+SEU_LINK_DO_APPS_SCRIPT/exec?action=list
+
+O certo é aparecer um JSON com os produtos.
+
+4) CONECTAR O SITE
+Abra assets/js/app.js.
+Procure:
+const WEB_APP_URL = 'COLE_AQUI_O_LINK_DO_APPS_SCRIPT_EXEC';
+
+Troque pelo seu link /exec, por exemplo:
+const WEB_APP_URL = 'https://script.google.com/macros/s/SEU_ID/exec';
+
+5) TESTE LOCAL
+Não teste abrindo o HTML direto com file://.
+Use o Live Server do VS Code.
+Clique com botão direito no index.html > Open with Live Server.
+
+6) GITHUB PAGES
+Suba index.html e a pasta assets para o repositório.
+Ative o GitHub Pages.
+O convidado acessa apenas o link do GitHub Pages.
+
+OBSERVAÇÃO:
+Este site usa JSONP para funcionar bem no GitHub Pages com Google Apps Script, evitando problema de CORS.
