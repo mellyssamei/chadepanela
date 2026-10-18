@@ -1,41 +1,42 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lista de Presentes — Mel & Messias</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Chá de Panela | Mel & Messias</title>
+  <meta name="description" content="Você é nosso convidado especial para o Chá de Panela da Mel e do Messias, dia 14 de novembro de 2026, às 14h, em Contagem/MG.">
+
+  <meta name="theme-color" content="#090909">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chá de Panela | Mel & Messias">
+  <meta property="og:description" content="14 de novembro de 2026, às 14h. Esperamos você para celebrar esse momento especial!">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --black: #000000;
-      --near-black: #11110f;
-      --deep-black: #070706;
-      --white: #ffffff;
-      --off-white: #faf8f5;
-      --soft-white: #f3f0ea;
-      --gold: #d4af37;
-      --gold-soft: #e4c978;
-      --gold-muted: #b9983d;
-      --green-dark: #3f4a3c;
-      --green-light: #a7b59a;
-      --bambu: #a89f8c;
-      --inox: #c8c6c2;
-      --text: #151512;
-      --muted: #6f6b61;
-      --line: rgba(21, 21, 18, 0.12);
-      --shadow: 0 18px 50px rgba(0, 0, 0, 0.07);
-      --radius-lg: 26px;
-      --radius-md: 18px;
-      --radius-sm: 12px;
+      --black: #090909;
+      --black-soft: #111111;
+      --card: #171717;
+      --white: #f7f5f1;
+      --muted: #aaa8a3;
+      --gold: #b5a080;
+      --line: rgba(255,255,255,.14);
+      --green: #2f4034;
+
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -43,1641 +44,1313 @@
     }
 
     body {
-      min-height: 100vh;
-      background: var(--off-white);
-      color: var(--text);
-      font-family: 'Montserrat', Arial, sans-serif;
-    }
-
-    button,
-    input,
-    select {
-      font: inherit;
-    }
-
-    button {
-      cursor: pointer;
+      font-family: var(--sans);
+      background: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
       color: inherit;
+      text-decoration: none;
     }
 
-    .hero {
-      position: relative;
-      min-height: 470px;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      padding: 80px 24px 72px;
-      background:
-        radial-gradient(circle at 50% 75%, rgba(212, 175, 55, 0.17), transparent 31%),
-        linear-gradient(135deg, #151512 0%, #1f1f1d 48%, #080807 100%);
-      color: var(--white);
-      text-align: center;
+    button {
+      font: inherit;
+      cursor: pointer;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(135deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 80px),
-        radial-gradient(circle at 50% 50%, transparent, rgba(0,0,0,0.25));
-      pointer-events: none;
+    ::selection {
+      background: var(--gold);
+      color: #000;
     }
 
-    .hero__bg-mark {
-      position: absolute;
-      inset: auto 0 -18px 0;
-      color: rgba(255, 255, 255, 0.025);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(9rem, 24vw, 20rem);
-      line-height: 0.8;
-      letter-spacing: -0.08em;
-      user-select: none;
-      pointer-events: none;
-    }
-
-    .hero__content {
-      position: relative;
-      z-index: 1;
-      width: min(760px, 100%);
+    .container {
+      width: min(1100px, 90%);
+      margin-inline: auto;
     }
 
     .eyebrow {
-      color: var(--gold-soft);
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.28em;
-      line-height: 1.5;
+      font-size: 10px;
+      letter-spacing: 4px;
       text-transform: uppercase;
-    }
-
-    .eyebrow--dark {
-      color: var(--gold-muted);
-    }
-
-    .hero__logo {
-      display: block;
-      width: clamp(112px, 17vw, 172px);
-      height: auto;
-      margin: 18px auto 8px;
-      object-fit: contain;
-      mix-blend-mode: screen;
-    }
-
-    .hero h1 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(3.2rem, 9vw, 6.5rem);
-      font-weight: 400;
-      line-height: 0.95;
-      letter-spacing: -0.045em;
-    }
-
-    .hero h1 span {
-      color: var(--gold-soft);
-      font-style: italic;
-      font-weight: 300;
-    }
-
-    .hero__subtitle {
-      width: min(660px, 100%);
-      margin: 28px auto 0;
-      color: rgba(255, 255, 255, 0.78);
-      font-size: clamp(1rem, 2.2vw, 1.25rem);
-      font-weight: 400;
-      line-height: 1.8;
-    }
-
-    .hero__pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 26px;
-      padding: 14px 24px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.035);
-      color: rgba(255, 255, 255, 0.83);
-      font-size: 0.92rem;
-      line-height: 1.4;
-      backdrop-filter: blur(8px);
-    }
-
-    .palette-bar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 28px;
-      flex-wrap: wrap;
-      padding: 18px 24px;
-      background: var(--white);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .palette-bar__label,
-    .palette-bar__note {
-      color: var(--text);
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-
-    .palette-bar__note {
-      color: var(--muted);
-    }
-
-    .palette-bar__swatches {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .swatch {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--muted);
-      font-size: 0.92rem;
       font-weight: 600;
+      color: var(--gold);
     }
 
-    .swatch i {
-      width: 18px;
-      height: 18px;
-      display: inline-block;
-      border: 1px solid rgba(0, 0, 0, 0.16);
-      border-radius: 999px;
+    .section-title {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(42px, 7vw, 68px);
+      line-height: 1;
+      letter-spacing: -1.5px;
     }
 
-    .pix-banner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      padding: 28px 24px;
-      background: var(--deep-black);
-      border-bottom: 3px solid var(--gold-muted);
-      color: var(--white);
+    .section-description {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.9;
+      max-width: 570px;
+      margin: 18px auto 0;
     }
 
-    .pix-banner__title {
-      color: var(--gold-soft);
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
+    .divider {
+      width: 44px;
+      height: 1px;
+      margin: 26px auto;
+      background: var(--gold);
     }
 
-    .pix-banner__text {
-      margin-top: 8px;
-      color: rgba(255, 255, 255, 0.76);
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-
-    .pix-card {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      width: min(430px, 100%);
-      padding: 14px 16px 14px 20px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: var(--radius-md);
-      background: rgba(255, 255, 255, 0.055);
-    }
-
-    .pix-card div {
-      min-width: 0;
-      flex: 1;
-    }
-
-    .pix-card strong {
-      display: block;
-      color: var(--white);
-      font-size: 1.18rem;
-      letter-spacing: 0.04em;
-    }
-
-    .pix-card span {
-      display: block;
-      margin-top: 4px;
-      color: rgba(255, 255, 255, 0.68);
-      font-size: 0.82rem;
-    }
+    /* =====================================
+       BOTÕES
+    ===================================== */
 
     .btn {
       display: inline-flex;
-      align-items: center;
       justify-content: center;
-      min-height: 44px;
-      padding: 12px 20px;
-      border: 0;
-      border-radius: 999px;
-      font-weight: 800;
-      line-height: 1;
-      text-decoration: none;
-      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
-      white-space: nowrap;
+      align-items: center;
+      gap: 12px;
+      min-height: 54px;
+      padding: 15px 27px;
+      border: 1px solid var(--gold);
+      background: transparent;
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: .25s ease;
+      border-radius: 2px;
     }
 
     .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .btn--gold {
-      background: var(--gold-soft);
-      color: var(--near-black);
-    }
-
-    .btn--dark {
-      background: var(--near-black);
-      color: var(--white);
-    }
-
-    .btn--light {
-      background: var(--soft-white);
-      color: var(--text);
-    }
-
-    .btn--outline {
-      border: 1px solid var(--line);
       background: var(--white);
-      color: var(--text);
+      border-color: var(--white);
+      color: #000;
+      transform: translateY(-2px);
     }
 
-    .main {
-      width: min(1060px, calc(100% - 40px));
-      margin: 34px auto 0;
+    .btn-white {
+      background: var(--white);
+      color: #090909;
+      border-color: var(--white);
     }
 
-    .note-card {
+    .btn-white:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    /* =====================================
+       TOPO
+    ===================================== */
+
+    .header {
+      height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
-      padding: 18px 20px;
-      border: 1px solid rgba(212, 175, 55, 0.25);
-      border-radius: var(--radius-md);
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      z-index: 10;
+    }
+
+    .header-logo {
+      font-family: var(--serif);
+      font-size: 29px;
+      font-weight: 600;
+      letter-spacing: -2px;
+    }
+
+    .header-logo span {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .header-date {
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* =====================================
+       HERO / ABERTURA
+    ===================================== */
+
+    .hero {
+      min-height: 720px;
+      min-height: min(850px, calc(100svh - 82px));
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      padding: 90px 20px;
       background:
-        linear-gradient(135deg, rgba(255,255,255,0.92), rgba(250,248,245,0.86)),
-        radial-gradient(circle at right top, rgba(212, 175, 55, 0.12), transparent 34%);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.045);
+        radial-gradient(ellipse at center, #191919 0%, #090909 66%);
     }
 
-    .note-card p {
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.65;
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 22px;
+      border: 1px solid rgba(181,160,128,.30);
+      pointer-events: none;
     }
 
-    .note-card strong {
-      color: var(--text);
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 32px;
+      border: 1px solid rgba(255,255,255,.055);
+      pointer-events: none;
     }
 
-    .note-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .controls {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      margin-top: 22px;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      background: rgba(250, 248, 245, 0.92);
-      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.055);
-      backdrop-filter: blur(14px);
-    }
-
-    .controls__head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 16px;
-    }
-
-    .controls h2 {
-      margin-top: 5px;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      color: var(--text);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 500;
-      letter-spacing: -0.035em;
-      line-height: 1;
-    }
-
-    .stats {
-      color: var(--muted);
-      font-size: 0.84rem;
-      line-height: 1.5;
-      text-align: right;
-    }
-
-    .stats strong {
-      color: var(--text);
-    }
-
-    .filters-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) 220px;
-      gap: 12px;
-      align-items: end;
-    }
-
-    .field {
-      display: grid;
-      gap: 8px;
-      color: var(--muted);
-      font-size: 0.74rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .field input,
-    .field select,
-    .modal input {
+    .hero-content {
+      position: relative;
+      z-index: 2;
       width: 100%;
-      min-height: 48px;
-      padding: 0 14px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      background: var(--white);
-      color: var(--text);
-      font-size: 0.94rem;
-      outline: none;
-      transition: border 0.2s ease, box-shadow 0.2s ease;
+      max-width: 740px;
     }
 
-    .field input:focus,
-    .field select:focus,
-    .modal input:focus {
-      border-color: rgba(212, 175, 55, 0.65);
-      box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.12);
-    }
-
-    .status-filters {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .filter-btn {
-      min-height: 42px;
-      padding: 10px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--white);
-      color: var(--muted);
-      font-size: 0.84rem;
-      font-weight: 800;
-      transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
-    }
-
-    .filter-btn.is-active,
-    .filter-btn:hover {
-      border-color: var(--near-black);
-      background: var(--near-black);
-      color: var(--white);
-    }
-
-    .gift-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .gift-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 16px;
-      align-items: center;
-      padding: 16px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      background: var(--white);
-      box-shadow: 0 10px 26px rgba(0,0,0,0.045);
-    }
-
-    .gift-row--reserved {
-      background: linear-gradient(135deg, rgba(63, 74, 60, 0.08), rgba(255,255,255,0.92));
-    }
-
-    .gift-info {
-      min-width: 0;
-    }
-
-    .gift-name {
-      display: block;
-      color: var(--text);
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(1.8rem, 4vw, 2.35rem);
-      font-weight: 500;
-      line-height: 1;
-      letter-spacing: -0.035em;
-    }
-
-    .gift-meta {
+    .hero-top {
       display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 9px;
-      color: var(--muted);
-      font-size: 0.84rem;
-      line-height: 1.4;
-    }
-
-    .price-pill,
-    .status {
-      display: inline-flex;
-      align-items: center;
-      min-height: 28px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .price-pill {
-      background: var(--soft-white);
-      color: var(--muted);
-    }
-
-    .status.is-available {
-      background: rgba(167, 181, 154, 0.28);
-      color: var(--green-dark);
-    }
-
-    .status.is-reserved {
-      background: rgba(212, 175, 55, 0.22);
-      color: #6e5210;
-    }
-
-    .gift-actions {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 8px;
-      width: 145px;
-    }
-
-    .row-action {
-      display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 42px;
-      padding: 10px 12px;
-      border: 0;
-      border-radius: 999px;
-      background: var(--near-black);
-      color: var(--white);
-      font-size: 0.82rem;
-      font-weight: 800;
-      text-align: center;
-      text-decoration: none;
-      transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+      gap: 15px;
+      margin-bottom: 35px;
     }
 
-    .row-action:hover {
-      transform: translateY(-1px);
-      background: var(--green-dark);
+    .hero-top span {
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
     }
 
-    .row-action--secondary {
-      border: 1px solid var(--line);
-      background: var(--white);
-      color: var(--text);
-    }
-
-    .row-action--secondary:hover {
-      background: var(--soft-white);
-    }
-
-    .row-action[disabled] {
-      cursor: not-allowed;
-      opacity: 0.55;
-      transform: none;
-      background: var(--soft-white);
-      color: var(--muted);
-    }
-
-    .release-card {
+    .monogram {
+      width: 126px;
+      height: 126px;
+      margin: 0 auto 35px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-top: 18px;
-      padding: 16px 18px;
-      border: 1px solid rgba(63, 74, 60, 0.16);
-      border-radius: var(--radius-md);
-      background: rgba(255,255,255,0.7);
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.6;
+      justify-content: center;
+      position: relative;
+      font-family: var(--serif);
+      font-size: 50px;
+      font-weight: 500;
+      letter-spacing: -5px;
     }
 
-    .release-card strong {
-      color: var(--text);
+    .monogram::after {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border-radius: 50%;
+      border: 1px solid rgba(181,160,128,.35);
     }
 
-    .empty-state {
-      display: grid;
-      place-items: center;
+    .monogram em {
+      color: var(--gold);
+      font-weight: 400;
+      font-size: 35px;
+      margin: 0 5px;
+    }
+
+    .hero-label {
+      font-family: var(--serif);
+      font-size: clamp(27px, 4vw, 39px);
+      font-weight: 400;
+      margin-bottom: -8px;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(82px, 14vw, 150px);
+      font-weight: 500;
+      font-style: italic;
+      letter-spacing: -5px;
+      line-height: 1.05;
+      color: var(--white);
+    }
+
+    .hero-names {
+      font-family: var(--serif);
+      font-size: clamp(35px, 6vw, 59px);
+      letter-spacing: -1px;
+      margin-top: 17px;
+    }
+
+    .hero-names span {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .hero-description {
+      color: #bfbcb8;
+      max-width: 480px;
+      margin: 24px auto 0;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .hero-date {
+      font-size: 12px;
+      margin: 35px 0;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 12px;
-      min-height: 280px;
-      padding: 40px 24px;
-      border: 1px dashed rgba(212, 175, 55, 0.5);
-      border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.68);
+    }
+
+    .corner {
+      position: absolute;
+      z-index: 1;
+      width: 160px;
+      height: 160px;
+      opacity: .38;
+      pointer-events: none;
+    }
+
+    .corner svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .corner-tl {
+      top: 35px;
+      left: 30px;
+    }
+
+    .corner-br {
+      bottom: 35px;
+      right: 30px;
+      transform: rotate(180deg);
+    }
+
+    /* =====================================
+       INFORMAÇÕES DO EVENTO
+    ===================================== */
+
+    .event {
+      background: var(--white);
+      color: var(--black);
+      padding: 105px 0 110px;
+    }
+
+    .event-header {
+      text-align: center;
+      margin-bottom: 58px;
+    }
+
+    .event .section-description {
+      color: #666;
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      border: 1px solid #d6d2cc;
+    }
+
+    .event-box {
+      text-align: center;
+      padding: 55px 25px;
+    }
+
+    .event-box + .event-box {
+      border-left: 1px solid #d6d2cc;
+    }
+
+    .event-icon {
+      width: 36px;
+      height: 36px;
+      color: #8c795f;
+      margin-bottom: 26px;
+    }
+
+    .event-box h3 {
+      font-family: var(--serif);
+      font-size: 35px;
+      font-weight: 600;
+      margin: 10px 0 12px;
+    }
+
+    .event-box p {
+      font-size: 13px;
+      color: #5b5b5b;
+      line-height: 1.9;
+    }
+
+    .event-box .btn {
+      margin-top: 26px;
+      background: #111;
+      color: white;
+      border-color: #111;
+    }
+
+    .event-box .btn:hover {
+      background: #333;
+    }
+
+    /* =====================================
+       ENXOVAL
+    ===================================== */
+
+    .enxoval {
+      padding: 110px 0;
+      text-align: center;
+      background: var(--black);
+    }
+
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 770px;
+      gap: 16px;
+      margin: 52px auto 35px;
+    }
+
+    .color-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .color-swatch {
+      width: 100%;
+      height: 105px;
+      border: 1px solid rgba(255,255,255,.25);
+    }
+
+    .swatch-black {
+      background: #080808;
+    }
+
+    .swatch-white {
+      background: #efede8;
+    }
+
+    .swatch-inox {
+      background: linear-gradient(
+        120deg,
+        #666 0%,
+        #eee 31%,
+        #999 57%,
+        #dedede 80%,
+        #777 100%
+      );
+    }
+
+    .swatch-bamboo {
+      background: linear-gradient(
+        90deg,
+        #a98760,
+        #d6b78b,
+        #b29267
+      );
+    }
+
+    .color-item span {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #cfcac3;
+    }
+
+    .enxoval-note {
+      max-width: 650px;
+      margin: 33px auto 0;
+      padding: 23px;
+      border: 1px solid var(--line);
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .enxoval-note strong {
+      color: white;
+    }
+
+    /* =====================================
+       CONTATO
+    ===================================== */
+
+    .contact {
+      background: #151515;
+      padding: 110px 0;
+      text-align: center;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-inner {
+      max-width: 730px;
+      margin: 0 auto;
+    }
+
+    .contact-icon {
+      width: 62px;
+      height: 62px;
+      margin: 0 auto 28px;
+      color: var(--gold);
+      border: 1px solid rgba(181,160,128,.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    .contact-icon svg {
+      width: 27px;
+      height: 27px;
+    }
+
+    .contact-highlight {
+      margin: 30px auto 32px;
+      padding: 22px 25px;
+      border-left: 2px solid var(--gold);
+      background: rgba(255,255,255,.035);
+      max-width: 530px;
+      text-align: left;
+    }
+
+    .contact-highlight p {
+      font-size: 13px;
+      line-height: 1.85;
+      color: #ccc;
+    }
+
+    .contact-highlight strong {
+      color: white;
+    }
+
+    /* =====================================
+       PIX
+    ===================================== */
+
+    .pix {
+      padding: 110px 0;
+      background: var(--white);
+      color: var(--black);
       text-align: center;
     }
 
-    .empty-state img {
-      width: 100px;
-      height: auto;
-      mix-blend-mode: multiply;
+    .pix-description {
+      color: #666;
+      margin: 18px auto 40px;
+      max-width: 510px;
+      font-size: 14px;
+      line-height: 1.85;
     }
 
-    .empty-state h3 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 2.15rem;
-      font-weight: 500;
-      line-height: 1;
+    .pix-card {
+      max-width: 525px;
+      margin: auto;
+      border: 1px solid #d2cec8;
+      padding: 36px 28px;
+      background: #fff;
     }
 
-    .empty-state p {
-      max-width: 520px;
+    .pix-symbol {
+      width: 42px;
+      height: 42px;
+      margin-bottom: 18px;
+      color: #222;
+    }
+
+    .pix-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: #666;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    .pix-number {
+      font-family: var(--serif);
+      font-size: clamp(29px, 5vw, 43px);
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 25px;
+      white-space: nowrap;
+    }
+
+    .pix-card .btn {
+      background: #111;
+      color: white;
+      border-color: #111;
+      width: 100%;
+    }
+
+    .pix-card .btn:hover {
+      background: #333;
+    }
+
+    .pix-feedback {
+      min-height: 20px;
+      font-size: 12px;
+      color: #34714b;
+      margin-top: 15px;
+    }
+
+    /* =====================================
+       ENCERRAMENTO
+    ===================================== */
+
+    .closing {
+      padding: 105px 20px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at center, #191919, #090909 70%);
+    }
+
+    .closing-mark {
+      font-family: var(--serif);
+      font-size: 65px;
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .closing h2 {
+      font-family: var(--serif);
+      font-size: clamp(40px, 6vw, 66px);
+      font-weight: 400;
+      margin-bottom: 18px;
+    }
+
+    .closing p {
       color: var(--muted);
-      line-height: 1.7;
+      font-size: 13px;
+      line-height: 1.9;
     }
 
     .footer {
-      display: grid;
-      place-items: center;
-      gap: 8px;
-      margin-top: 50px;
-      padding: 52px 24px;
+      padding: 30px 20px;
+      text-align: center;
       border-top: 1px solid var(--line);
-      color: var(--muted);
-      text-align: center;
     }
 
-    .footer img {
-      width: 90px;
-      height: auto;
-      mix-blend-mode: multiply;
-    }
-
-    .footer strong {
-      color: var(--text);
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.8rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-    }
-
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 18px;
-      background: rgba(0, 0, 0, 0.58);
-      backdrop-filter: blur(8px);
-    }
-
-    .modal-backdrop.is-open {
-      display: flex;
-    }
-
-    .modal {
-      position: relative;
-      width: min(500px, 100%);
-      max-height: calc(100vh - 36px);
-      overflow: auto;
-      padding: 32px;
-      border-radius: var(--radius-lg);
-      background: var(--off-white);
-      box-shadow: 0 26px 80px rgba(0, 0, 0, 0.24);
-    }
-
-    .modal__close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 36px;
-      height: 36px;
-      border: 0;
-      border-radius: 999px;
-      background: var(--white);
-      color: var(--text);
-      font-size: 1.5rem;
-      line-height: 1;
-    }
-
-    .modal h3 {
-      margin-top: 6px;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 2.5rem;
-      font-weight: 500;
-      line-height: 1;
-      letter-spacing: -0.04em;
-    }
-
-    .modal p {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 0.94rem;
-      line-height: 1.7;
-    }
-
-    .modal form {
-      display: grid;
-      gap: 16px;
-      margin-top: 22px;
-    }
-
-    .modal label {
-      display: grid;
-      gap: 8px;
-      color: var(--muted);
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
+    .footer p {
+      font-size: 10px;
+      letter-spacing: 2px;
       text-transform: uppercase;
+      color: #777;
     }
 
-    .modal small {
-      color: var(--muted);
-      font-size: 0.76rem;
-      font-weight: 500;
-      line-height: 1.5;
-      text-transform: none;
-      letter-spacing: 0;
-    }
+    /* =====================================
+       ANIMAÇÕES
+    ===================================== */
 
-    .modal__actions {
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-      margin-top: 8px;
-    }
-
-    .help-steps {
-      display: grid;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .help-step {
-      display: grid;
-      grid-template-columns: 34px 1fr;
-      gap: 12px;
-      align-items: start;
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      background: var(--white);
-    }
-
-    .help-step span {
-      display: grid;
-      place-items: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 999px;
-      background: var(--near-black);
-      color: var(--white);
-      font-weight: 800;
-    }
-
-    .help-step strong {
-      display: block;
-      margin-bottom: 4px;
-      color: var(--text);
-    }
-
-    .help-step p {
-      margin: 0;
-      font-size: 0.86rem;
-    }
-
-    .toast {
-      position: fixed;
-      left: 50%;
-      bottom: 24px;
-      z-index: 200;
-      max-width: calc(100% - 32px);
-      padding: 13px 20px;
-      border-radius: 999px;
-      background: var(--near-black);
-      color: var(--white);
-      font-size: 0.88rem;
-      font-weight: 800;
+    .reveal {
       opacity: 0;
-      transform: translateX(-50%) translateY(20px);
-      pointer-events: none;
-      transition: opacity 0.25s ease, transform 0.25s ease;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.22);
-      text-align: center;
+      transform: translateY(24px);
+      transition:
+        opacity .75s ease,
+        transform .75s ease;
     }
 
-    .toast.is-visible {
+    .reveal.visible {
       opacity: 1;
-      transform: translateX(-50%) translateY(0);
+      transform: translateY(0);
     }
 
-    @media (max-width: 760px) {
+    /* =====================================
+       RESPONSIVIDADE
+    ===================================== */
+
+    @media (max-width: 700px) {
+
+      .header {
+        height: 70px;
+      }
+
+      .header-date {
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
+
       .hero {
-        min-height: 390px;
-        padding: 50px 18px 48px;
+        min-height: 750px;
+        min-height: calc(100svh - 70px);
+        padding: 95px 35px;
       }
 
-      .hero__logo {
-        width: 100px;
+      .hero::before {
+        inset: 12px;
       }
 
-      .hero__subtitle {
-        margin-top: 18px;
+      .hero::after {
+        inset: 19px;
       }
 
-      .hero__pill {
-        width: 100%;
-        padding: 12px 15px;
-        border-radius: 18px;
+      .monogram {
+        width: 105px;
+        height: 105px;
+        font-size: 43px;
+        margin-bottom: 35px;
       }
 
-      .palette-bar {
-        gap: 12px;
-        padding: 14px 12px;
+      .hero h1 {
+        font-size: clamp(76px, 18vw, 105px);
       }
 
-      .palette-bar__swatches {
-        width: 100%;
-        gap: 10px;
+      .hero-names {
+        font-size: clamp(37px, 9vw, 52px);
       }
 
-      .swatch {
-        font-size: 0.82rem;
+      .hero-description {
+        font-size: 12px;
+        max-width: 330px;
       }
 
-      .pix-banner {
+      .hero-date {
+        line-height: 2;
+      }
+
+      .hero-actions {
+        flex-direction: column;
         align-items: stretch;
-        gap: 18px;
-        text-align: center;
+        max-width: 285px;
+        margin: auto;
+      }
+
+      .corner {
+        width: 95px;
+        height: 95px;
+        opacity: .25;
+      }
+
+      .corner-tl {
+        top: 20px;
+        left: 17px;
+      }
+
+      .corner-br {
+        bottom: 20px;
+        right: 17px;
+      }
+
+      .event,
+      .enxoval,
+      .contact,
+      .pix {
+        padding: 80px 0;
+      }
+
+      .event-header {
+        margin-bottom: 40px;
+      }
+
+      .event-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .event-box {
+        padding: 43px 20px;
+      }
+
+      .event-box + .event-box {
+        border-left: none;
+        border-top: 1px solid #d6d2cc;
+      }
+
+      .color-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px 15px;
+      }
+
+      .color-swatch {
+        height: 95px;
+      }
+
+      .contact-highlight {
+        padding: 20px;
       }
 
       .pix-card {
-        flex-direction: column;
-        gap: 14px;
+        padding: 33px 18px;
       }
 
-      .pix-card .btn {
-        width: 100%;
-      }
-
-      .main {
-        width: min(100% - 22px, 1060px);
-        margin-top: 22px;
-      }
-
-      .note-card {
-        align-items: stretch;
-        flex-direction: column;
-      }
-
-      .note-actions,
-      .note-actions .btn {
-        width: 100%;
-      }
-
-      .controls {
-        top: 0;
-        padding: 14px;
-        border-radius: 20px;
-      }
-
-      .controls__head {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .stats {
-        text-align: left;
-      }
-
-      .filters-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .status-filters {
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 6px;
-      }
-
-      .filter-btn {
-        min-height: 40px;
-        padding: 9px 8px;
-        font-size: 0.78rem;
-      }
-
-      .gift-row {
-        grid-template-columns: minmax(0, 1fr) 118px;
-        gap: 10px;
-        padding: 14px;
-        border-radius: 16px;
-      }
-
-      .gift-name {
-        font-size: 1.7rem;
-      }
-
-      .gift-meta {
-        gap: 6px;
-      }
-
-      .price-pill,
-      .status {
-        min-height: 25px;
-        padding: 5px 8px;
-        font-size: 0.62rem;
-      }
-
-      .gift-actions {
-        width: 118px;
-      }
-
-      .row-action {
-        min-height: 40px;
-        padding: 9px 8px;
-        font-size: 0.76rem;
-      }
-
-      .release-card {
-        align-items: stretch;
-        flex-direction: column;
-      }
-
-      .release-card .btn {
-        width: 100%;
-      }
-
-      .modal {
-        padding: 28px 18px 20px;
-      }
-
-      .modal__actions {
-        flex-direction: column-reverse;
-      }
-
-      .modal__actions .btn {
-        width: 100%;
+      .closing {
+        padding: 85px 20px;
       }
     }
 
-    @media (max-width: 390px) {
-      .hero h1 {
-        font-size: 2.95rem;
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
       }
 
-      .gift-row {
-        grid-template-columns: 1fr;
-      }
-
-      .gift-actions {
-        grid-template-columns: 1fr 1fr;
-        width: 100%;
-      }
-
-      .gift-actions .row-action:only-child {
-        grid-column: 1 / -1;
+      .reveal {
+        opacity: 1;
+        transform: none;
       }
     }
-
-    /* Ajuste da fonte dos nomes dos produtos */
-.gift-name {
-  font-family: 'Montserrat', Arial, sans-serif !important;
-  font-size: 1.05rem !important;
-  font-weight: 600 !important;
-  line-height: 1.35 !important;
-  letter-spacing: -0.01em !important;
-  color: #151512 !important;
-}
-
-/* Ajuste no celular */
-@media (max-width: 720px) {
-  .gift-name {
-    font-size: 1rem !important;
-    line-height: 1.35 !important;
-  }
-}
   </style>
 </head>
 
 <body>
-  <header class="hero">
-    <div class="hero__bg-mark" aria-hidden="true">M&amp;M</div>
 
-    <div class="hero__content">
-      <p class="eyebrow">Lista de presentes</p>
-      <img class="hero__logo" src="data:image/webp;base64,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" alt="Monograma Mel e Messias" />
-      <h1>Mel <span>&amp;</span> Messias</h1>
-      <p class="hero__subtitle">
-        Escolha um presente, clique em reservar e garanta o seu. Cada item pode ser reservado apenas uma vez.
-      </p>
-      <div class="hero__pill">
-        Enxoval nas cores: preto · branco · inox · bambu
-      </div>
-    </div>
+  <!-- ÍCONES SVG REUTILIZÁVEIS -->
+  <svg xmlns="http://www.w3.org/2000/svg"
+       style="position:absolute;width:0;height:0;overflow:hidden"
+       aria-hidden="true">
+
+    <symbol id="icon-calendar" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="16" rx="1"
+            fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M7 3v4M17 3v4M3 10h18"
+            fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M9 15h6M12 12v6"
+            fill="none" stroke="currentColor" stroke-width="1.3"/>
+    </symbol>
+
+    <symbol id="icon-pin" viewBox="0 0 24 24">
+      <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"
+            fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="12" cy="10" r="2.5"
+              fill="none" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+
+    <symbol id="icon-message" viewBox="0 0 24 24">
+      <path d="M20.5 11.5a8.5 8.5 0 0 1-12.4 7.5L3 21l1.9-5.1A8.5 8.5 0 1 1 20.5 11.5Z"
+            fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M9 8.5c.5 3 3.5 6 6.5 6.5l1.2-1.2"
+            fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="icon-copy" viewBox="0 0 24 24">
+      <rect x="8" y="8" width="12" height="12" rx="1"
+            fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M16 8V4H4v12h4"
+            fill="none" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+
+    <symbol id="icon-pix" viewBox="0 0 24 24">
+      <path d="m12 2 6 6-6 6-6-6 6-6ZM12 10l6 6-6 6-6-6 6-6ZM4 10l-3 3 3 3 3-3-3-3ZM20 10l-3 3 3 3 3-3-3-3Z"
+            fill="none" stroke="currentColor" stroke-width="1.2"/>
+    </symbol>
+
+    <symbol id="icon-leaves" viewBox="0 0 160 160">
+      <path d="M0 0 Q40 60 125 135"
+            fill="none" stroke="#a99679" stroke-width="1"/>
+      <path d="M18 25Q80 12 66 72Q30 68 18 25Z"
+            fill="#344537" stroke="#a99679" stroke-width=".7"/>
+      <path d="M54 61Q115 35 100 98Q67 101 54 61Z"
+            fill="#344537" stroke="#a99679" stroke-width=".7"/>
+      <path d="M84 98Q153 71 135 139Q101 140 84 98Z"
+            fill="#344537" stroke="#a99679" stroke-width=".7"/>
+      <path d="M32 53Q11 105 72 110Q74 78 32 53Z"
+            fill="#26362d" stroke="#a99679" stroke-width=".7"/>
+    </symbol>
+  </svg>
+
+  <!-- =====================================
+       CABEÇALHO
+  ===================================== -->
+
+  <header class="header container">
+    <a href="#inicio" class="header-logo" aria-label="Início">
+      M<span>&</span>M
+    </a>
+
+    <span class="header-date">14.11.2026</span>
   </header>
 
-  <section class="palette-bar" aria-label="Cores do enxoval">
-    <span class="palette-bar__label">Cores do enxoval</span>
-    <div class="palette-bar__swatches">
-      <span class="swatch"><i style="background:#000000"></i>Preto</span>
-      <span class="swatch"><i style="background:#ffffff"></i>Branco</span>
-      <span class="swatch"><i style="background:#c8c6c2"></i>Inox</span>
-      <span class="swatch"><i style="background:#a89f8c"></i>Bambu</span>
-    </div>
-    <span class="palette-bar__note">Evite cores vivas ou estampadas</span>
-  </section>
+  <!-- =====================================
+       ABERTURA
+  ===================================== -->
 
-  <section class="pix-banner" aria-label="Presente em dinheiro via Pix">
-    <div>
-      <p class="pix-banner__title">Prefere presentear em dinheiro?</p>
-      <p class="pix-banner__text">Sua contribuição vai direto para o nosso lar.</p>
-    </div>
+  <main>
 
-    <div class="pix-card">
-      <div>
-        <strong id="pix-key">31971755128</strong>
-        <span>Mellyssa Meireles dos Santos</span>
+    <section class="hero" id="inicio">
+
+      <div class="corner corner-tl">
+        <svg><use href="#icon-leaves"/></svg>
       </div>
-      <button class="btn btn--gold" type="button" data-action="copy-pix">Copiar Pix</button>
-    </div>
-  </section>
 
-  <main class="main">
-    <section class="note-card" aria-label="Informações rápidas">
-      <p>
-        <strong>Os itens abaixo são sugestões.</strong>
-        Vocês são livres para presentear com outro item, de qualquer faixa de preço, seguindo as cores do enxoval.
-      </p>
-      <div class="note-actions">
-        <button class="btn btn--outline" type="button" data-action="open-help">Como funciona</button>
+      <div class="corner corner-br">
+        <svg><use href="#icon-leaves"/></svg>
       </div>
-    </section>
-    <section class="release-card" aria-label="Desfazer reserva">
-      <p>
-        <strong>Reservou e precisa liberar o presente?</strong>
-        Envie uma mensagem para que possamos tirar o item de reservado.
-      </p>
-      <a class="btn btn--outline" id="release-whatsapp" target="_blank" rel="noopener noreferrer">Enviar mensagem</a>
-    </section>
 
-    <section class="controls" aria-label="Filtros da lista">
-      <div class="controls__head">
-        <div>
-          <p class="eyebrow eyebrow--dark">Lista</p>
-          <h2>Presentes</h2>
+      <div class="hero-content">
+
+        <div class="monogram" aria-label="Monograma Mel e Messias">
+          M<em>&</em>M
         </div>
-        <div class="stats" id="stats">Carregando presentes...</div>
-      </div>
 
-      <div class="filters-grid">
-        <label class="field">
-          Pesquisar presente
-          <input id="search-input" type="search" placeholder="Ex.: geladeira, cooktop..." autocomplete="off" />
-        </label>
+        <div class="hero-top">
+          <span></span>
+          <p class="eyebrow">Você é nosso convidado</p>
+          <span></span>
+        </div>
 
-        <label class="field">
-          Ordenar por
-          <select id="sort-select">
-            <option value="alpha">Ordem alfabética</option>
-            <option value="price-asc">Menor preço para maior</option>
-            <option value="price-desc">Maior preço para menor</option>
-          </select>
-        </label>
-      </div>
+        <p class="hero-label">Chá de</p>
+        <h1>Panela</h1>
 
-      <div class="status-filters" role="group" aria-label="Filtrar por status">
-        <button class="filter-btn is-active" type="button" data-status="available">Disponíveis</button>
-        <button class="filter-btn" type="button" data-status="all">Todos</button>
-        <button class="filter-btn" type="button" data-status="reserved">Reservados</button>
+        <h2 class="hero-names">
+          Mel <span>&</span> Messias
+        </h2>
+
+        <div class="divider"></div>
+
+        <p class="hero-description">
+          Com carinho, esperamos você para celebrar
+          esse momento especial com a gente.
+        </p>
+
+        <p class="hero-date">
+          Sábado · 14 de novembro de 2026 · 14h
+        </p>
+
+        <div class="hero-actions">
+          <a href="#informacoes" class="btn btn-white">
+            Ver informações
+          </a>
+
+          <a href="#presentes" class="btn">
+            Sobre os presentes
+          </a>
+        </div>
+
       </div>
     </section>
 
-    <section class="gift-list" id="gift-list" aria-live="polite"></section>
+    <!-- =====================================
+         DATA E LOCAL
+    ===================================== -->
 
-    <section class="release-card" aria-label="Desfazer reserva">
-      <p>
-        <strong>Reservou e precisa liberar o presente?</strong>
-        Envie uma mensagem para que possamos tirar o item de reservado.
-      </p>
-      <a class="btn btn--outline" id="release-whatsapp" target="_blank" rel="noopener noreferrer">Enviar mensagem</a>
+    <section class="event" id="informacoes">
+
+      <div class="container">
+
+        <div class="event-header reveal">
+          <p class="eyebrow">Nosso encontro</p>
+          <div class="divider"></div>
+
+          <h2 class="section-title">
+            Anote na agenda
+          </h2>
+
+          <p class="section-description">
+            Estamos preparando um momento especial
+            e sua presença fará toda a diferença.
+          </p>
+        </div>
+
+        <div class="event-grid reveal">
+
+          <div class="event-box">
+
+            <svg class="event-icon">
+              <use href="#icon-calendar"/>
+            </svg>
+
+            <p class="eyebrow">Data e horário</p>
+
+            <h3>14 de novembro</h3>
+
+            <p>
+              Sábado, 2026<br>
+              A partir das 14 horas
+            </p>
+
+          </div>
+
+          <div class="event-box">
+
+            <svg class="event-icon">
+              <use href="#icon-pin"/>
+            </svg>
+
+            <p class="eyebrow">Local do encontro</p>
+
+            <h3>Contagem, MG</h3>
+
+            <p>
+              Rua 3, nº 55<br>
+              Bairro Chácaras Novo Horizonte<br>
+              Contagem, Minas Gerais
+            </p>
+
+            <a
+              href="https://share.google/860iZBYmej5pxxfvS"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+            >
+              <svg><use href="#icon-pin"/></svg>
+              Abrir localização
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
     </section>
+
+    <!-- =====================================
+         ENXOVAL
+    ===================================== -->
+
+    <section class="enxoval" id="presentes">
+
+      <div class="container">
+
+        <div class="reveal">
+          <p class="eyebrow">Um pequeno detalhe</p>
+          <div class="divider"></div>
+
+          <h2 class="section-title">
+            Nosso enxoval
+          </h2>
+
+          <p class="section-description">
+            Para quem deseja nos presentear,
+            nosso enxoval segue uma paleta de cores
+            que escolhemos com muito carinho.
+          </p>
+        </div>
+
+        <div class="color-grid reveal">
+
+          <div class="color-item">
+            <div class="color-swatch swatch-black"></div>
+            <span>Preto</span>
+          </div>
+
+          <div class="color-item">
+            <div class="color-swatch swatch-white"></div>
+            <span>Branco</span>
+          </div>
+
+          <div class="color-item">
+            <div class="color-swatch swatch-inox"></div>
+            <span>Inox</span>
+          </div>
+
+          <div class="color-item">
+            <div class="color-swatch swatch-bamboo"></div>
+            <span>Bambu</span>
+          </div>
+
+        </div>
+
+        <div class="enxoval-note reveal">
+          <strong>Uma observação importante</strong><br>
+          Preferimos itens nessas tonalidades,
+          evitando produtos coloridos ou estampados.
+          Na dúvida, é sempre melhor perguntar.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================
+         CONTATO DA MÃE DA NOIVA
+    ===================================== -->
+
+    <section class="contact" id="duvidas">
+
+      <div class="container contact-inner reveal">
+
+        <div class="contact-icon">
+          <svg><use href="#icon-message"/></svg>
+        </div>
+
+        <p class="eyebrow">
+          Dúvidas sobre presentes?
+        </p>
+
+        <div class="divider"></div>
+
+        <h2 class="section-title">
+          Antes de escolher,<br>
+          fale com a gente.
+        </h2>
+
+        <p class="section-description">
+          Quer saber o que já temos, o que gostaríamos
+          de ganhar ou tirar alguma dúvida sobre um presente?
+        </p>
+
+        <div class="contact-highlight">
+          <p>
+            <strong>Fale diretamente com a mãe da noiva.</strong><br>
+            Ela é a responsável por orientar os convidados
+            sobre os presentes, sem precisar consultar
+            os noivos com você.
+          </p>
+        </div>
+
+        <a
+          id="whatsapp-link"
+          href="https://wa.me/5531988984154"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-white"
+        >
+          <svg><use href="#icon-message"/></svg>
+          Conversar no WhatsApp
+        </a>
+
+      </div>
+    </section>
+
+    <!-- =====================================
+         PIX
+    ===================================== -->
+
+    <section class="pix" id="pix">
+
+      <div class="container reveal">
+
+        <p class="eyebrow">
+          Uma outra forma de carinho
+        </p>
+
+        <div class="divider"></div>
+
+        <h2 class="section-title">
+          Pix para presentear
+        </h2>
+
+        <p class="pix-description">
+          Se preferir nos presentear com um valor
+          para ajudar a construir nosso novo lar,
+          deixamos aqui nossa chave Pix.
+          Agradecemos de coração!
+        </p>
+
+        <div class="pix-card">
+
+          <svg class="pix-symbol">
+            <use href="#icon-pix"/>
+          </svg>
+
+          <p class="pix-label">
+            Chave Pix · Telefone
+          </p>
+
+          <p class="pix-number">
+            (31) 97175-5128
+          </p>
+
+          <button
+            class="btn"
+            type="button"
+            id="copy-pix"
+          >
+            <svg><use href="#icon-copy"/></svg>
+            <span id="copy-label">Copiar chave Pix</span>
+          </button>
+
+          <p
+            id="pix-feedback"
+            class="pix-feedback"
+            role="status"
+            aria-live="polite"
+          ></p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================
+         ENCERRAMENTO
+    ===================================== -->
+
+    <section class="closing">
+
+      <div class="container reveal">
+
+        <p class="closing-mark">M&M</p>
+
+        <p class="eyebrow">
+          Com amor e gratidão
+        </p>
+
+        <div class="divider"></div>
+
+        <h2>
+          Esperamos você!
+        </h2>
+
+        <p>
+          Mais do que presentes, queremos compartilhar
+          esse momento com pessoas especiais.<br>
+          Sua presença é o que torna tudo ainda mais bonito.
+        </p>
+
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
-    <img src="data:image/webp;base64,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" alt="Monograma M&M" />
-    <strong>Mel &amp; Messias</strong>
-    <span>Com amor e gratidão por cada presente e presença.</span>
+    <p>Mel & Messias · 14 de novembro de 2026</p>
   </footer>
 
-  <div class="modal-backdrop" id="reserve-modal" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="reserve-title">
-      <button class="modal__close" type="button" data-action="close-reserve-modal" aria-label="Fechar">×</button>
-      <p class="eyebrow eyebrow--dark">Reserva</p>
-      <h3 id="reserve-title">Reservar presente</h3>
-      <p id="reserve-product-text"></p>
-
-      <form id="reserve-form">
-        <label>
-          Seu nome
-          <input id="reserve-name" type="text" placeholder="Digite seu nome" required />
-        </label>
-
-        <label>
-          Seu WhatsApp
-          <input id="reserve-whatsapp" type="tel" placeholder="Ex.: 31999999999" required />
-          <small>Usaremos apenas caso seja necessário confirmar alguma informação sobre a reserva.</small>
-        </label>
-
-        <div class="modal__actions">
-          <button class="btn btn--light" type="button" data-action="close-reserve-modal">Cancelar</button>
-          <button class="btn btn--dark" type="submit">Confirmar dados</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="modal-backdrop" id="custom-modal" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="custom-title">
-      <button class="modal__close" type="button" data-action="close-custom-modal" aria-label="Fechar">×</button>
-      <p class="eyebrow eyebrow--dark">Outro presente</p>
-      <h3 id="custom-title">Reservar item fora da lista</h3>
-      <p>Use esta opção caso você queira dar um presente que não aparece na lista. Ele será registrado apenas para nós na planilha.</p>
-
-      <form id="custom-form">
-        <label>
-          Qual presente você deseja dar?
-          <input id="custom-gift" type="text" placeholder="Ex.: Jogo de copos, panela, organizador..." required />
-        </label>
-
-        <label>
-          Seu nome
-          <input id="custom-name" type="text" placeholder="Digite seu nome" required />
-        </label>
-
-        <label>
-          Seu WhatsApp
-          <input id="custom-whatsapp" type="tel" placeholder="Ex.: 31999999999" required />
-        </label>
-
-        <div class="modal__actions">
-          <button class="btn btn--light" type="button" data-action="close-custom-modal">Cancelar</button>
-          <button class="btn btn--dark" type="submit">Reservar outro presente</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="modal-backdrop" id="help-modal" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="help-title">
-      <button class="modal__close" type="button" data-action="close-help" aria-label="Fechar">×</button>
-      <p class="eyebrow eyebrow--dark">Ajuda</p>
-      <h3 id="help-title">Como usar a lista</h3>
-
-      <div class="help-steps">
-        <div class="help-step">
-          <span>1</span>
-          <div>
-            <strong>Procure um presente</strong>
-            <p>Use a busca para encontrar rapidamente um item que você já tem em mente.</p>
-          </div>
-        </div>
-        <div class="help-step">
-          <span>2</span>
-          <div>
-            <strong>Ordene a lista</strong>
-            <p>Você pode ver em ordem alfabética, da menor faixa de preço para a maior ou ao contrário.</p>
-          </div>
-        </div>
-        <div class="help-step">
-          <span>3</span>
-          <div>
-            <strong>Veja a sugestão</strong>
-            <p>Quando houver link cadastrado, clique em “Ver sugestão” para abrir a referência do produto.</p>
-          </div>
-        </div>
-        <div class="help-step">
-          <span>4</span>
-          <div>
-            <strong>Reserve o presente</strong>
-            <p>Clique em “Reservar”, preencha seu nome e WhatsApp, depois confirme. O item sairá da lista de disponíveis.</p>
-          </div>
-        </div>
-        <div class="help-step">
-          <span>5</span>
-          <div>
-            <strong>Quer dar outro item?</strong>
-            <p>Use o botão “Reservar outro presente” para registrar algo que não está na lista.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal__actions">
-        <button class="btn btn--dark" type="button" data-action="close-help">Entendi</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <!-- =====================================
+       JAVASCRIPT
+  ===================================== -->
 
   <script>
-    // 1) Cole aqui a URL do Web App do seu Apps Script.
-    // Ela normalmente termina com /exec.
-    const API_URL = 'https://script.google.com/macros/s/AKfycbzUJ9Z_DnZPGe7qtwN_8PjxOujilZ7RbX9wmFbOfwf-hDqTB-5hNNBb8G8mGehsS-z6/exec';
 
-    const PIX_KEY = '31971755128';
-    const RELEASE_WHATSAPP = '31995012124';
-    const RELEASE_MESSAGE = 'Olá, quero tirar de reservado um presente da lista de chá de panela da Mel e Messias.';
+    /* CONFIGURAÇÕES PRINCIPAIS */
 
-    const state = {
-      products: [],
-      search: '',
-      status: 'available',
-      sort: 'alpha',
-      loading: true,
-      selectedProduct: null
+    const CONFIG = {
+      pix: "31971755128",
+
+      whatsapp: "5531988984154",
+
+      mensagem:
+        "Olá, vim do convite do Chá de Panela da Mel e Messias e tenho dúvida com relação a algum presente."
     };
 
-    const els = {
-      giftList: document.getElementById('gift-list'),
-      stats: document.getElementById('stats'),
-      searchInput: document.getElementById('search-input'),
-      sortSelect: document.getElementById('sort-select'),
-      statusButtons: document.querySelectorAll('[data-status]'),
-      toast: document.getElementById('toast'),
-      reserveModal: document.getElementById('reserve-modal'),
-      reserveForm: document.getElementById('reserve-form'),
-      reserveProductText: document.getElementById('reserve-product-text'),
-      reserveName: document.getElementById('reserve-name'),
-      reserveWhatsapp: document.getElementById('reserve-whatsapp'),
-      customModal: document.getElementById('custom-modal'),
-      customForm: document.getElementById('custom-form'),
-      customGift: document.getElementById('custom-gift'),
-      customName: document.getElementById('custom-name'),
-      customWhatsapp: document.getElementById('custom-whatsapp'),
-      helpModal: document.getElementById('help-modal'),
-      releaseWhatsapp: document.getElementById('release-whatsapp'),
-    };
 
-    function init() {
-      document.getElementById('pix-key').textContent = PIX_KEY;
-      els.releaseWhatsapp.href = 'https://wa.me/' + RELEASE_WHATSAPP + '?text=' + encodeURIComponent(RELEASE_MESSAGE);
+    /* WHATSAPP COM MENSAGEM PRONTA */
 
-      bindEvents();
-      loadProducts();
-    }
+    const whatsappLink = document.getElementById("whatsapp-link");
 
-    function bindEvents() {
-      document.addEventListener('click', function(event) {
-        const target = event.target.closest('[data-action]');
-        if (!target) return;
+    const whatsappURL =
+      "https://wa.me/" +
+      CONFIG.whatsapp +
+      "?text=" +
+      encodeURIComponent(CONFIG.mensagem);
 
-        const action = target.dataset.action;
-        const id = target.dataset.id;
+    whatsappLink.href = whatsappURL;
 
-        if (action === 'copy-pix') copyPix();
-        if (action === 'open-help') openModal(els.helpModal);
-        if (action === 'close-help') closeModal(els.helpModal);
-        if (action === 'open-custom-modal') openModal(els.customModal);
-        if (action === 'close-custom-modal') closeModal(els.customModal);
-        if (action === 'close-reserve-modal') closeReserveModal();
-        if (action === 'reserve-product') openReserveModal(id);
-      });
 
-      [els.reserveModal, els.customModal, els.helpModal].forEach(function(modal) {
-        modal.addEventListener('click', function(event) {
-          if (event.target === modal) closeModal(modal);
-        });
-      });
+    /* COPIAR PIX */
 
-      document.addEventListener('keydown', function(event) {
-        if (event.key !== 'Escape') return;
-        closeReserveModal();
-        closeModal(els.customModal);
-        closeModal(els.helpModal);
-      });
+    const copyButton = document.getElementById("copy-pix");
+    const copyLabel = document.getElementById("copy-label");
+    const pixFeedback = document.getElementById("pix-feedback");
 
-      els.searchInput.addEventListener('input', function(event) {
-        state.search = event.target.value;
-        render();
-      });
+    async function copiarPix() {
 
-      els.sortSelect.addEventListener('change', function(event) {
-        state.sort = event.target.value;
-        render();
-      });
+      let copiado = false;
 
-      els.statusButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-          state.status = button.dataset.status;
-          els.statusButtons.forEach(function(btn) { btn.classList.remove('is-active'); });
-          button.classList.add('is-active');
-          render();
-        });
-      });
+      try {
 
-      els.reserveForm.addEventListener('submit', submitReservation);
-      els.customForm.addEventListener('submit', submitCustomGift);
-    }
+        if (
+          navigator.clipboard &&
+          window.isSecureContext
+        ) {
+          await navigator.clipboard.writeText(CONFIG.pix);
+          copiado = true;
+        }
 
-    function loadProducts() {
-      state.loading = true;
-      render();
-
-      callApi({ action: 'list' })
-        .then(function(response) {
-          if (!response.success) {
-            throw new Error(response.message || 'Não foi possível carregar a lista.');
-          }
-
-          state.products = Array.isArray(response.produtos) ? response.produtos : [];
-          state.loading = false;
-          render();
-        })
-        .catch(function(error) {
-          state.loading = false;
-          showError(error.message || 'Não foi possível carregar a lista.');
-        });
-    }
-
-    function render() {
-      if (state.loading) {
-        els.stats.textContent = 'Carregando...';
-        els.giftList.innerHTML = renderEmptyState('Carregando lista...', 'Aguarde um instante enquanto buscamos os presentes disponíveis.');
-        return;
+      } catch (error) {
+        copiado = false;
       }
 
-      const total = state.products.length;
-      const reserved = state.products.filter(function(product) { return Boolean(product.reserved); }).length;
-      const available = total - reserved;
-      const visible = getVisibleProducts();
+      /* Alternativa para navegadores antigos */
 
-      els.stats.innerHTML =
-        '<strong>' + available + '</strong> disponíveis · ' +
-        '<strong>' + reserved + '</strong> reservados · ' +
-        '<strong>' + visible.length + '</strong> exibidos';
+      if (!copiado) {
+        const campo = document.createElement("textarea");
 
-      if (!total) {
-        els.giftList.innerHTML = renderEmptyState(
-          'Nenhum presente cadastrado ainda.',
-          'Os produtos serão exibidos aqui assim que forem cadastrados na planilha.'
-        );
-        return;
+        campo.value = CONFIG.pix;
+        campo.style.position = "fixed";
+        campo.style.opacity = "0";
+
+        document.body.appendChild(campo);
+        campo.focus();
+        campo.select();
+
+        try {
+          copiado = document.execCommand("copy");
+        } catch (error) {
+          copiado = false;
+        }
+
+        document.body.removeChild(campo);
       }
 
-      if (!visible.length) {
-        els.giftList.innerHTML = renderEmptyState(
-          'Nenhum presente encontrado.',
-          'Tente limpar a busca, mudar o filtro ou alterar a ordenação.'
-        );
-        return;
+      if (copiado) {
+
+        copyLabel.textContent = "Chave copiada!";
+        pixFeedback.textContent =
+          "Chave Pix copiada com sucesso.";
+
+      } else {
+
+        copyLabel.textContent = "Copiar chave Pix";
+        pixFeedback.textContent =
+          "Não foi possível copiar automaticamente. " +
+          "Selecione o número acima para copiar.";
+
       }
-
-      els.giftList.innerHTML = visible.map(renderGiftRow).join('');
     }
 
-    function getVisibleProducts() {
-      const search = normalizeText(state.search);
+    copyButton.addEventListener("click", copiarPix);
 
-      return state.products
-        .filter(function(product) {
-          const matchesSearch = normalizeText(product.produto).includes(search);
-          const matchesStatus =
-            state.status === 'all' ||
-            (state.status === 'available' && !product.reserved) ||
-            (state.status === 'reserved' && product.reserved);
 
-          return matchesSearch && matchesStatus;
-        })
-        .sort(sortProducts);
-    }
+    /* ANIMAÇÕES AO ROLAR A PÁGINA */
 
-    function sortProducts(a, b) {
-      if (state.sort === 'price-asc') {
-        return comparePrice(a, b, 'asc');
-      }
+    const revealElements =
+      document.querySelectorAll(".reveal");
 
-      if (state.sort === 'price-desc') {
-        return comparePrice(a, b, 'desc');
-      }
+    if ("IntersectionObserver" in window) {
 
-      return String(a.produto || '').localeCompare(String(b.produto || ''), 'pt-BR', { sensitivity: 'base' });
-    }
+      const observer = new IntersectionObserver(
+        (entries) => {
 
-    function comparePrice(a, b, direction) {
-      const priceA = getPriceRank(a.faixa);
-      const priceB = getPriceRank(b.faixa);
+          entries.forEach((entry) => {
 
-      if (priceA === 999999 && priceB !== 999999) return 1;
-      if (priceB === 999999 && priceA !== 999999) return -1;
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
 
-      if (priceA !== priceB) {
-        return direction === 'asc' ? priceA - priceB : priceB - priceA;
-      }
+          });
 
-      return String(a.produto || '').localeCompare(String(b.produto || ''), 'pt-BR', { sensitivity: 'base' });
-    }
-
-    function getPriceRank(value) {
-      const text = normalizeText(value);
-
-      if (!text) return 999999;
-      if (text.includes('300') && (text.includes('mais') || text.includes('+') || text.includes('acima'))) return 300;
-
-      const numbers = text.match(/\d+/g);
-      if (!numbers || !numbers.length) return 999999;
-
-      return Number(numbers[0]);
-    }
-
-    function renderGiftRow(product) {
-      const name = escapeHtml(product.produto || 'Produto sem nome');
-      const faixa = escapeHtml(product.faixa || 'Faixa não informada');
-      const hasLink = Boolean(String(product.link || '').trim());
-      const link = hasLink ? normalizeUrl(product.link) : '';
-      const statusLabel = product.reserved ? 'Reservado' : 'Disponível';
-      const statusClass = product.reserved ? 'is-reserved' : 'is-available';
-
-      return [
-        '<article class="gift-row ' + (product.reserved ? 'gift-row--reserved' : '') + '">',
-          '<div class="gift-info">',
-            '<strong class="gift-name">' + name + '</strong>',
-            '<div class="gift-meta">',
-              '<span class="price-pill">Faixa: ' + faixa + '</span>',
-              '<span class="status ' + statusClass + '">' + statusLabel + '</span>',
-            '</div>',
-          '</div>',
-          '<div class="gift-actions">',
-            hasLink
-              ? '<a class="row-action row-action--secondary" href="' + escapeHtml(link) + '" target="_blank" rel="noopener noreferrer">Ver sugestão</a>'
-              : '',
-            product.reserved
-              ? '<button class="row-action" type="button" disabled>Reservado</button>'
-              : '<button class="row-action" type="button" data-action="reserve-product" data-id="' + escapeHtml(product.id) + '">Reservar</button>',
-          '</div>',
-        '</article>'
-      ].join('');
-    }
-
-    function renderEmptyState(title, text) {
-      return [
-        '<div class="empty-state">',
-          '<img src="data:image/webp;base64,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" alt="Monograma M&M" />',
-          '<h3>' + escapeHtml(title) + '</h3>',
-          '<p>' + escapeHtml(text) + '</p>',
-        '</div>'
-      ].join('');
-    }
-
-    function openReserveModal(id) {
-      const product = state.products.find(function(item) {
-        return String(item.id) === String(id);
-      });
-
-      if (!product || product.reserved) return;
-
-      state.selectedProduct = product;
-      els.reserveProductText.textContent = 'Você está reservando: ' + product.produto + '. Depois da confirmação, esse item sairá da lista de disponíveis.';
-      els.reserveForm.reset();
-      openModal(els.reserveModal);
-      setTimeout(function() { els.reserveName.focus(); }, 60);
-    }
-
-    function closeReserveModal() {
-      closeModal(els.reserveModal);
-      state.selectedProduct = null;
-      els.reserveForm.reset();
-    }
-
-    function submitReservation(event) {
-      event.preventDefault();
-
-      const product = state.selectedProduct;
-      const nome = els.reserveName.value.trim();
-      const whatsapp = els.reserveWhatsapp.value.trim();
-
-      if (!product) return;
-      if (!nome || !whatsapp) {
-        showToast('Preencha seu nome e WhatsApp.');
-        return;
-      }
-
-      const confirmed = window.confirm(
-        'Você confirma a reserva do presente "' + product.produto + '"?\n\n' +
-        'Se depois você não quiser mais reservar esse item, pedimos que envie uma mensagem para liberarmos o presente para outra pessoa.'
+        },
+        {
+          threshold: 0.12
+        }
       );
 
-      if (!confirmed) return;
-
-      setFormLoading(els.reserveForm, true);
-
-      callApi({
-        action: 'reserve',
-        id: product.id,
-        nome: nome,
-        whatsapp: whatsapp
-      })
-      .then(function(response) {
-        if (!response.success) {
-          throw new Error(response.message || 'Não foi possível reservar.');
-        }
-
-        closeReserveModal();
-        showToast('Presente reservado com sucesso.');
-        loadProducts();
-      })
-      .catch(function(error) {
-        showToast(error.message || 'Não foi possível reservar.');
-      })
-      .finally(function() {
-        setFormLoading(els.reserveForm, false);
+      revealElements.forEach((element) => {
+        observer.observe(element);
       });
-    }
 
-    function submitCustomGift(event) {
-      event.preventDefault();
+    } else {
 
-      const presente = els.customGift.value.trim();
-      const nome = els.customName.value.trim();
-      const whatsapp = els.customWhatsapp.value.trim();
-
-      if (!presente || !nome || !whatsapp) {
-        showToast('Preencha todos os campos.');
-        return;
-      }
-
-      const confirmed = window.confirm(
-        'Você confirma que deseja reservar este presente fora da lista?\n\n' +
-        presente + '\n\n' +
-        'Ele será registrado para a Mel e o Messias na planilha.'
-      );
-
-      if (!confirmed) return;
-
-      setFormLoading(els.customForm, true);
-
-      callApi({
-        action: 'reserve_custom',
-        presente: presente,
-        nome: nome,
-        whatsapp: whatsapp
-      })
-      .then(function(response) {
-        if (!response.success) {
-          throw new Error(response.message || 'Não foi possível registrar.');
-        }
-
-        els.customForm.reset();
-        closeModal(els.customModal);
-        showToast('Presente registrado com sucesso.');
-      })
-      .catch(function(error) {
-        showToast(error.message || 'Não foi possível registrar.');
-      })
-      .finally(function() {
-        setFormLoading(els.customForm, false);
+      revealElements.forEach((element) => {
+        element.classList.add("visible");
       });
+
     }
 
-    function callApi(params) {
-      return new Promise(function(resolve, reject) {
-        if (!API_URL || API_URL.includes('COLE_AQUI')) {
-          reject(new Error('Configure a URL do Apps Script dentro do HTML.'));
-          return;
-        }
-
-        const callbackName = 'mmCallback_' + Date.now() + '_' + Math.floor(Math.random() * 100000);
-        const script = document.createElement('script');
-        const query = new URLSearchParams(Object.assign({}, params, { callback: callbackName }));
-        const separator = API_URL.includes('?') ? '&' : '?';
-
-        window[callbackName] = function(response) {
-          cleanup();
-          resolve(response);
-        };
-
-        script.onerror = function() {
-          cleanup();
-          reject(new Error('Erro ao conectar com a planilha.'));
-        };
-
-        script.src = API_URL + separator + query.toString();
-        document.body.appendChild(script);
-
-        function cleanup() {
-          delete window[callbackName];
-          if (script.parentNode) script.parentNode.removeChild(script);
-        }
-      });
-    }
-
-    function setFormLoading(form, isLoading) {
-      const buttons = form.querySelectorAll('button');
-      buttons.forEach(function(button) {
-        button.disabled = isLoading;
-      });
-    }
-
-    function copyPix() {
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(PIX_KEY).then(function() {
-          showToast('Chave Pix copiada.');
-        });
-        return;
-      }
-
-      const temp = document.createElement('input');
-      temp.value = PIX_KEY;
-      document.body.appendChild(temp);
-      temp.select();
-      document.execCommand('copy');
-      temp.remove();
-      showToast('Chave Pix copiada.');
-    }
-
-    function openModal(modal) {
-      modal.classList.add('is-open');
-      modal.setAttribute('aria-hidden', 'false');
-    }
-
-    function closeModal(modal) {
-      modal.classList.remove('is-open');
-      modal.setAttribute('aria-hidden', 'true');
-    }
-
-    function showError(message) {
-      els.stats.textContent = 'Erro ao carregar';
-      els.giftList.innerHTML = renderEmptyState('Não foi possível carregar a lista.', message);
-    }
-
-    function showToast(message) {
-      els.toast.textContent = message;
-      els.toast.classList.add('is-visible');
-      clearTimeout(showToast.timeout);
-      showToast.timeout = setTimeout(function() {
-        els.toast.classList.remove('is-visible');
-      }, 3000);
-    }
-
-    function normalizeUrl(url) {
-      const value = String(url || '').trim();
-      if (!value) return '';
-      if (/^https?:\/\//i.test(value)) return value;
-      return 'https://' + value;
-    }
-
-    function normalizeText(value) {
-      return String(value || '')
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .toLowerCase()
-        .trim();
-    }
-
-    function escapeHtml(value) {
-      return String(value || '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-    }
-
-    init();
   </script>
+
 </body>
 </html>
